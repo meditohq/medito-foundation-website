@@ -1,2 +1,4 @@
 /meditations https://www.youtube.com/@Medito/videos 301
 /meditations/* https://www.youtube.com/@Medito/videos 301
+/donate https://donate.meditofoundation.org 301
+/donations https://donate.meditofoundation.org 301
