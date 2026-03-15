@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Section from '../components/Section.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import StatsStrip from '../components/StatsStrip.astro';
+import StoreBadges from '../components/StoreBadges.astro';
+---
+
+<Layout title="30-Day Meditation Challenge — Medito Foundation">
+  <Header transparent />
+
+  <main>
+    <!-- Hero -->
+    <section class="relative min-h-[55vh] flex items-center overflow-hidden">
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://cdn.medito.app/png/packs/30_day_mindfulness_challenge.png')"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/40"></div>
+      <div class="relative z-10 w-full px-6 py-14 text-center">
+        <div class="max-w-[768px] mx-auto text-warm-50">
+          <h1 class="font-serif text-[clamp(2.25rem,7vw,3.25rem)] leading-[1.1] tracking-tight">
+            30-Day Meditation <em class="italic">Challenge</em>
+          </h1>
+          <p class="mt-6 text-[16px] text-white leading-[1.7] max-w-md mx-auto">
+            Form a daily meditation habit that can have a life-changing effect. Choose from three challenges, completely free.
+          </p>
+          <StoreBadges variant="dark" gaPrefix="challenge_hero" class="mt-8" />
+        </div>
+      </div>
+    </section>
+
+    <StatsStrip variant="light" stats={[
+      { value: '4.1M+', label: 'people reached' },
+      { value: '100%', label: 'free, forever' },
+      { value: '30', label: 'days to a new habit' },
+    ]} />
+
+    <!-- Challenges -->
+    <Section>
+      <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-8 text-center">Free challenges</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="border border-warm-200 p-6 text-center">
+          <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-3">01</p>
+          <h3 class="font-serif text-[20px] mb-3">Mindfulness</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">
+            Form a strong meditation habit while trying different methods and techniques over 30 days.
+          </p>
+        </div>
+        <div class="border border-warm-200 p-6 text-center">
+          <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-3">02</p>
+          <h3 class="font-serif text-[20px] mb-3">Compassion</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">
+            A truly transformative practice to bring compassion into your everyday life over 30 days.
+          </p>
+        </div>
+        <div class="border border-warm-200 p-6 text-center">
+          <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-3">03</p>
+          <h3 class="font-serif text-[20px] mb-3">Getting Active</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">
+            Created by scientists to help you become more active and build exercise into your routine.
+          </p>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Why Medito -->
+    <Section class="bg-warm-100">
+      <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-8 text-center">Why Medito</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-center">
+        <div>
+          <p class="text-[15px] text-ink-light leading-[1.7]"><strong class="text-ink">No paywalls.</strong><br />Every meditation, course, and challenge is completely free.</p>
+        </div>
+        <div>
+          <p class="text-[15px] text-ink-light leading-[1.7]"><strong class="text-ink">No account needed.</strong><br />Download and start meditating in seconds.</p>
+        </div>
+        <div>
+          <p class="text-[15px] text-ink-light leading-[1.7]"><strong class="text-ink">Non-profit.</strong><br />Your wellbeing, not profit, drives everything we do.</p>
+        </div>
+        <div>
+          <p class="text-[15px] text-ink-light leading-[1.7]"><strong class="text-ink">Evidence informed.</strong><br />Content developed with researchers and experienced teachers.</p>
+        </div>
+      </div>
+    </Section>
+
+    <!-- CTA -->
+    <section id="download" class="py-20 px-6 bg-cta scroll-mt-14">
+      <div class="max-w-[768px] mx-auto text-center">
+        <SectionHeading class="mx-auto text-white">
+          Ready to start?
+        </SectionHeading>
+        <p class="mt-4 text-[15px] text-white/80 leading-[1.7] max-w-md mx-auto">
+          Download the free Medito app and begin your 30-day challenge today. No account, no payment, no catch.
+        </p>
+        <StoreBadges variant="dark" gaPrefix="challenge_bottom" class="mt-8" />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+</Layout>

@@ -1,0 +1,178 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Section from '../components/Section.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const people = [
+  { name: 'Abdelrahman Mallasi', tag: 'Narration' },
+  { name: 'Aran Rees', tag: 'Writing' },
+  { name: 'Azim Lalan', tag: 'Foundation' },
+  { name: 'Benjamin Dalsgaard Hughes', tag: 'Writing' },
+  { name: 'Brittany McGuire', url: 'https://www.linkedin.com/in/brittany-mcguire-cpa-21497983/', tag: 'Foundation' },
+  { name: 'Charlie McGuire', tag: 'Narration' },
+  { name: 'Corinne Braun', tag: 'Writing' },
+  { name: 'Dario Froio', tag: 'Narration' },
+  { name: 'Diana Greco Ciobanu', tag: 'Narration' },
+  { name: 'Dipanjan Bosu', tag: 'Diversity' },
+  { name: 'Dominic O\'Neill', tag: 'Science' },
+  { name: 'Dr. Ananya Awasthi', tag: 'Science', note: 'Harvard School of Public Health' },
+  { name: 'Dr. Ben Ainsworth', tag: 'Science', note: 'University of Bath' },
+  { name: 'Dr. Daniela Di Basilio', tag: 'Science', note: 'Manchester Metropolitan University' },
+  { name: 'Dr. Francesca Pesola', tag: 'Science', note: 'King\'s College London' },
+  { name: 'Dr. Jennifer Daubenmier', tag: 'Science', note: 'San Francisco State University' },
+  { name: 'Dr. Laura B. Kasper', tag: 'Science', note: 'Stanford' },
+  { name: 'Dr. Prachi A. Patkee', tag: 'Science', note: 'King\'s College London' },
+  { name: 'Dr. William Van Gordon', tag: 'Science', note: 'University of Derby' },
+  { name: 'Ejaz Shaikh', tag: 'Writing' },
+  { name: 'Gareth Yorke', tag: 'Foundation' },
+  { name: 'George Longovitis', tag: 'Writing' },
+  { name: 'Glynnis Mapp Jacquard', tag: 'Narration' },
+  { name: 'Harshil Shah', tag: 'Writing' },
+  { name: 'Irene de Caso', tag: 'Science' },
+  { name: 'Jacob van Haaften', tag: 'Writing' },
+  { name: 'John Choque', tag: 'Narration' },
+  { name: 'Jonathan Kim', tag: 'Narration' },
+  { name: 'Katie Neubert', url: 'https://www.linkedin.com/in/kneubert1/', tag: 'Foundation' },
+  { name: 'Katie Nicholas', tag: 'Diversity' },
+  { name: 'Maria Camila Remolina Gutiérrez', tag: 'Narration' },
+  { name: 'Mark Carlson', tag: 'Narration' },
+  { name: 'Masha Remskar', tag: 'Science', note: 'University of Bath' },
+  { name: 'Megha Shyamili', tag: 'Writing' },
+  { name: 'Michael Martin', tag: 'Foundation' },
+  { name: 'Mike Speed', url: 'https://www.linkedin.com/in/michaelspeed/', tag: 'Foundation' },
+  { name: 'Morgan Kay', tag: 'Narration' },
+  { name: 'Patrick Bailey', tag: 'Writing' },
+  { name: 'Paul Billington', tag: 'Diversity' },
+  { name: 'Rebekah Hayward', tag: 'Diversity' },
+  { name: 'Regina Walker', tag: 'Narration' },
+  { name: 'Romain Sourdiaux', url: 'https://twitter.com/scouech', tag: 'Foundation' },
+  { name: 'Sarvesh Korde', tag: 'Narration' },
+  { name: 'Sophia', tag: 'Narration' },
+  { name: 'Steven Yorke', tag: 'Foundation' },
+  { name: 'Susan Verdes', tag: 'Writing' },
+  { name: 'Tanya', tag: 'Narration' },
+  { name: 'Tiffany Horan', tag: 'Narration' },
+  { name: 'Tuna Güleryüz', tag: 'Writing' },
+  { name: 'Will Irace', url: 'http://twitter.com/spblat', tag: 'Narration' },
+  { name: 'Yuta Hasumi', tag: 'Diversity' },
+];
+
+const supporters = [
+  { name: 'Cloudflare', url: 'https://www.cloudflare.com/' },
+  { name: 'ElevenLabs', url: 'https://elevenlabs.io/grants?ref=medito' },
+  { name: 'Google', url: 'https://www.google.org/' },
+  { name: 'Kirby CMS', url: 'https://getkirby.com/?ref=medito' },
+  { name: 'Mindfulness Association', url: 'https://www.mindfulnessassociation.net/?ref=medito' },
+  { name: 'Notion', url: 'https://www.notion.so/?ref=medito' },
+  { name: 'Sentry', url: 'https://sentry.io/?ref=medito' },
+];
+
+const friends = [
+  { name: 'UCLA', url: 'https://www.uclahealth.org/marc/mindful-meditations' },
+  { name: 'Audio Dharma', url: 'https://www.audiodharma.org' },
+  { name: 'Chris Collins', url: 'https://indiemusicbox.com' },
+  { name: 'George Thompson', url: 'https://www.youtube.com/@George-Thompson' },
+  { name: 'Giovanni Dienstmann', url: 'https://liveanddare.com/' },
+  { name: 'Mindfulness Man', url: 'https://mindfulnessman.podbean.com/' },
+  { name: 'The Tin Box', url: 'https://thetinboxmusic.com/' },
+  { name: 'This Is Not A Brand', url: 'https://open.spotify.com/album/3GGVMJC7ysZCmsW6CMEOft' },
+  { name: 'Unminus', url: 'https://open.spotify.com/artist/6zZPxLiRfbGUnoEAJmfJJN' },
+  { name: 'The Mindfulness Association', url: 'https://www.mindfulnessassociation.net/' },
+];
+---
+
+<Layout title="People — Medito Foundation">
+  <Header />
+
+  <main>
+    <!-- Hero -->
+    <section class="pt-32 pb-20 px-6">
+      <div class="max-w-[768px] mx-auto">
+        <SectionLabel text="Thank you" />
+        <h1 class="font-serif text-[clamp(2.25rem,7vw,3.25rem)] leading-[1.1] tracking-tight">
+          Built by <em class="italic">caring</em> human beings.
+        </h1>
+        <p class="mt-8 text-[16px] text-ink-light leading-[1.7]">
+          Medito was and is currently built and supported by caring human beings. We thank them for their past, present and future contributions.
+        </p>
+      </div>
+    </section>
+
+    <!-- People -->
+    <section class="pb-20 px-6">
+      <div class="max-w-[768px] mx-auto">
+        <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-6">People <span class="normal-case tracking-normal">(in alphabetical order)</span></p>
+        <div class="space-y-0">
+          {people.map(p => (
+            <div class="flex items-baseline justify-between gap-4 border-b border-warm-200 py-3">
+              <div class="flex items-baseline gap-2">
+                {p.url ? (
+                  <a href={p.url} target="_blank" rel="noopener" class="text-[15px] font-medium text-ink border-b border-ink pb-0.5 hover:text-ink-light hover:border-ink-light transition-colors duration-300">
+                    {p.name}
+                  </a>
+                ) : (
+                  <p class="text-[15px] font-medium text-ink">{p.name}</p>
+                )}
+                {p.tag && <span class="text-[13px] text-ink-faint">({p.tag})</span>}
+              </div>
+              {p.note && <p class="text-[14px] text-ink-light text-right">{p.note}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Supporters -->
+    <section class="pb-20 px-6">
+      <div class="max-w-[768px] mx-auto">
+        <SectionLabel text="Supporters" />
+        <div class="space-y-0">
+          {supporters.map(s => (
+            <div class="border-b border-warm-200 py-3">
+              <a href={s.url} target="_blank" rel="noopener" class="text-[15px] font-medium text-ink border-b border-ink pb-0.5 hover:text-ink-light hover:border-ink-light transition-colors duration-300">
+                {s.name}
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Friends of Medito -->
+    <section class="pb-20 px-6">
+      <div class="max-w-[768px] mx-auto">
+        <SectionLabel text="Friends of Medito" />
+        <div class="space-y-0">
+          {friends.map(f => (
+            <div class="border-b border-warm-200 py-3">
+              <a href={f.url} target="_blank" rel="noopener" class="text-[15px] font-medium text-ink border-b border-ink pb-0.5 hover:text-ink-light hover:border-ink-light transition-colors duration-300">
+                {f.name}
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Donors & Volunteers -->
+    <Section class="bg-[#e8446a] text-white">
+      <div class="flex gap-4 items-center mb-6">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="shrink-0 text-white/70">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <p class="text-[13px] text-white/70 uppercase tracking-[0.1em]">And everyone else</p>
+      </div>
+      <SectionHeading>
+        Thank you to our donors from all over the world.
+      </SectionHeading>
+      <p class="mt-6 text-[15px] text-white/80 leading-[1.7]">
+        And to hundreds of other volunteers and staff who have helped in the past. You make this possible.
+      </p>
+    </Section>
+  </main>
+
+  <Footer />
+</Layout>

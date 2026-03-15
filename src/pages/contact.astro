@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Section from '../components/Section.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<Layout title="Contact — Medito Foundation">
+  <Header currentPath="/contact" />
+
+  <main>
+    <section class="pt-32 px-6">
+      <div class="max-w-[768px] mx-auto">
+        <SectionLabel text="Contact" />
+        <h1 class="font-serif text-[clamp(2.25rem,7vw,3.25rem)] leading-[1.1] tracking-tight">
+          Get in touch
+        </h1>
+      </div>
+    </section>
+
+    <Section>
+      <SectionLabel text="App & Donation support" />
+      <p class="text-[15px] text-ink-light leading-[1.7]">
+        For any app related questions, donation issues, or general support, please use our intelligent FAQ.<br />
+        You can also reach the support team via this page.
+      </p>
+      <div class="mt-8 flex flex-col gap-3">
+        <a
+          href="https://medito.support.site/"
+          target="_blank"
+          rel="noopener"
+          class="text-[15px] font-medium text-warm-50 bg-ink px-5 py-2.5 w-fit hover:bg-ink-light transition-colors duration-300"
+        >
+          App support / FAQ ↗
+        </a>
+        <a
+          href="https://billing.stripe.com/p/login/4gw5ny82J1S50OA4gg"
+          target="_blank"
+          rel="noopener"
+          class="text-[15px] font-medium text-warm-50 bg-ink px-5 py-2.5 w-fit hover:bg-ink-light transition-colors duration-300"
+        >
+          Manage your donations ↗
+        </a>
+      </div>
+    </Section>
+
+    <Section class="bg-warm-100" id="general-enquiries">
+      <SectionLabel text="General enquiries" />
+      <p class="text-[15px] text-ink-light leading-[1.7]">
+        For partnerships, research projects, operations and any other questions, you can email us directly.<br />
+        <span class="text-ink font-medium border-b border-ink pb-0.5">hello [at] meditofoundation.org</span>
+      </p>
+    </Section>
+
+    <Section>
+      <SectionLabel text="Social links" />
+      <div class="space-y-0">
+        <div class="flex items-baseline justify-between border-b border-warm-200 py-3">
+          <p class="text-[15px] font-medium text-ink">Twitter / X</p>
+          <a href="https://twitter.com/meditohq" target="_blank" rel="noopener" class="text-[15px] text-ink border-b border-ink pb-0.5 hover:text-ink-light hover:border-ink-light transition-colors duration-300">
+            @meditoHQ
+          </a>
+        </div>
+        <div class="flex items-baseline justify-between border-b border-warm-200 py-3">
+          <p class="text-[15px] font-medium text-ink">Instagram</p>
+          <a href="https://www.instagram.com/meditohq" target="_blank" rel="noopener" class="text-[15px] text-ink border-b border-ink pb-0.5 hover:text-ink-light hover:border-ink-light transition-colors duration-300">
+            @meditoHQ
+          </a>
+        </div>
+        <div class="flex items-baseline justify-between border-b border-warm-200 py-3">
+          <p class="text-[15px] font-medium text-ink">Facebook</p>
+          <a href="https://www.facebook.com/meditohq" target="_blank" rel="noopener" class="text-[15px] text-ink border-b border-ink pb-0.5 hover:text-ink-light hover:border-ink-light transition-colors duration-300">
+            @meditoHQ
+          </a>
+        </div>
+        <div class="flex items-baseline justify-between border-b border-warm-200 py-3">
+          <p class="text-[15px] font-medium text-ink">LinkedIn</p>
+          <a href="https://www.linkedin.com/company/meditofoundation" target="_blank" rel="noopener" class="text-[15px] text-ink border-b border-ink pb-0.5 hover:text-ink-light hover:border-ink-light transition-colors duration-300">
+            Medito Foundation
+          </a>
+        </div>
+      </div>
+    </Section>
+  </main>
+
+  <Footer />
+</Layout>

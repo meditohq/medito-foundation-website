@@ -1,0 +1,71 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
+import BlogArchiveBanner from '../../components/BlogArchiveBanner.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.data.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={`${post.data.title} — Medito Foundation`} description={post.data.subtitle}>
+  <Header currentPath="/blog" />
+
+  <div class="pt-14">
+    <BlogArchiveBanner />
+  </div>
+
+  <main>
+    <article class="pt-32 pb-20 px-6">
+      <div class="max-w-[768px] mx-auto">
+        <SectionLabel text={post.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })} />
+
+        <h1 class="font-serif text-[clamp(2rem,6vw,3rem)] leading-[1.1] tracking-tight">
+          {post.data.title}
+        </h1>
+
+        {post.data.subtitle && (
+          <p class="mt-4 text-[16px] text-ink-light leading-[1.7]">
+            {post.data.subtitle}
+          </p>
+        )}
+
+        {post.data.cover && (
+          <img
+            src={post.data.cover}
+            alt=""
+            class="w-full mt-10"
+            style="border-radius: 42% 58% 35% 65% / 50% 38% 62% 50%;"
+            loading="eager"
+          />
+        )}
+
+        <div class="prose mt-12">
+          <Content />
+        </div>
+
+        {post.data.tags && post.data.tags.length > 0 && (
+          <div class="mt-12 pt-8 border-t border-warm-200 flex flex-wrap gap-2">
+            {post.data.tags.map(tag => (
+              <span class="text-[12px] text-ink-faint border border-warm-200 px-3 py-1">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>

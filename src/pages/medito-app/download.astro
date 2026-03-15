@@ -1,0 +1,28 @@
+---
+// Device-detection redirect to the appropriate app store
+const IOS_URL = 'https://apps.apple.com/us/app/medito/id1500780518';
+const ANDROID_URL = 'https://play.google.com/store/apps/details?id=meditofoundation.medito';
+const FALLBACK_URL = '/medito-app';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Download Medito</title>
+    <script is:inline define:vars={{ IOS_URL, ANDROID_URL, FALLBACK_URL }}>
+      var ua = navigator.userAgent || '';
+      if (/iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+        window.location.replace(IOS_URL);
+      } else if (/android/i.test(ua)) {
+        window.location.replace(ANDROID_URL);
+      } else {
+        window.location.replace(FALLBACK_URL);
+      }
+    </script>
+  </head>
+  <body>
+    <p style="font-family:system-ui;text-align:center;margin-top:4rem">Redirecting to the app store...</p>
+  </body>
+</html>

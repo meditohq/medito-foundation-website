@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Page not found — Medito Foundation">
+  <Header />
+
+  <main>
+    <section class="pt-32 pb-20 px-6 text-center">
+      <div class="max-w-[768px] mx-auto">
+        <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-6">404</p>
+        <h1 class="font-serif text-[clamp(2rem,6vw,3rem)] leading-[1.1] tracking-tight">
+          This page doesn't exist
+        </h1>
+        <p class="mt-6 text-[16px] text-ink-light leading-[1.7]">
+          The page you're looking for may have been moved or removed.
+        </p>
+        <a
+          href="/"
+          class="inline-block mt-8 text-[15px] font-medium text-white bg-cta px-6 py-3 hover:bg-cta-hover transition-colors duration-300"
+        >
+          Go to homepage
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

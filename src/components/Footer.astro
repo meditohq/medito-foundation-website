@@ -1,0 +1,62 @@
+---
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'App', href: '/medito-app' },
+  { label: 'About', href: '/about' },
+  { label: 'Research', href: '/research' },
+  { label: 'Blog archive', href: '/blog' },
+];
+---
+
+<footer class="py-16 px-6 bg-ink text-warm-50">
+  <div class="max-w-[768px] mx-auto">
+    <p class="text-[15px] font-medium text-warm-50">Medito Foundation</p>
+    <p class="mt-3 text-[14px] text-warm-200 leading-[1.7]">
+      A non-profit organisation building free, open-source meditation and mindfulness tools for everyone.
+    </p>
+    <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
+      <div>
+        <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-3">Pages</p>
+        <div class="flex flex-col gap-2">
+          {navLinks.map(link => (
+            <a href={link.href} data-ga={`footer_pages_${link.label.toLowerCase().replace(/\s+/g, '_')}`} class="text-[14px] text-warm-200 hover:text-warm-50 transition-colors duration-300">
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+      <div>
+        <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-3">Meditate</p>
+        <div class="flex flex-col gap-2">
+          <a href="/what-is-meditation" data-ga="footer_meditate_what_is_meditation" class="text-[14px] text-warm-200 hover:text-warm-50 transition-colors duration-300">What is Meditation?</a>
+          <a href="/meditation-for-beginners" data-ga="footer_meditate_beginners" class="text-[14px] text-warm-200 hover:text-warm-50 transition-colors duration-300">Meditation for Beginners</a>
+          <a href="/meditation-for-anxiety" data-ga="footer_meditate_anxiety" class="text-[14px] text-warm-200 hover:text-warm-50 transition-colors duration-300">Meditation for Anxiety</a>
+          <a href="/meditation-for-sleep" data-ga="footer_meditate_sleep" class="text-[14px] text-warm-200 hover:text-warm-50 transition-colors duration-300">Meditation for Sleep</a>
+          <a href="/free-meditation-app" data-ga="footer_meditate_free_app" class="text-[14px] text-warm-200 hover:text-warm-50 transition-colors duration-300">Free Meditation App</a>
+          <a href="/meditation-challenge" data-ga="footer_meditate_challenge" class="text-[14px] text-warm-200 hover:text-warm-50 transition-colors duration-300">Meditation Challenge</a>
+          <a href="https://www.youtube.com/@Medito/videos" target="_blank" rel="noopener" data-ga="footer_meditate_youtube" class="text-[14px] text-warm-200 hover:text-warm-50 transition-colors duration-300">YouTube ↗</a>
+        </div>
+      </div>
+      <div>
+        <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-3">Contact</p>
+        <div class="flex flex-col gap-2">
+          <a href="https://medito.support.site/" target="_blank" rel="noopener" data-ga="footer_contact_support" class="text-[14px] text-warm-200 hover:text-warm-50 transition-colors duration-300">App Support ↗</a>
+          <a href="https://billing.stripe.com/p/login/4gw5ny82J1S50OA4gg" target="_blank" rel="noopener" data-ga="footer_contact_manage_donations" class="text-[14px] text-warm-200 hover:text-warm-50 transition-colors duration-300">Manage donations ↗</a>
+          <a href="/contact#general-enquiries" data-ga="footer_contact_enquiries" class="text-[14px] text-warm-200 hover:text-warm-50 transition-colors duration-300">General enquiries</a>
+          <a href="https://github.com/meditohq" target="_blank" rel="noopener" data-ga="footer_contact_github" class="text-[14px] text-warm-200 hover:text-warm-50 transition-colors duration-300">GitHub ↗</a>
+        </div>
+      </div>
+<div>
+        <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-3">Legal</p>
+        <div class="flex flex-col gap-2">
+          <a href="/privacy" data-ga="footer_legal_privacy" class="text-[14px] text-warm-200 hover:text-warm-50 transition-colors duration-300">Privacy</a>
+          <a href="/terms-of-service" data-ga="footer_legal_terms" class="text-[14px] text-warm-200 hover:text-warm-50 transition-colors duration-300">Terms of Service</a>
+          <a href="/license" data-ga="footer_legal_license" class="text-[14px] text-warm-200 hover:text-warm-50 transition-colors duration-300">License</a>
+        </div>
+      </div>
+    </div>
+    <p class="mt-12 pt-8 border-t border-warm-50/10 text-[12px] text-ink-faint leading-[1.6]">
+      Stichting Medito · Non-profit registered in the Netherlands 🇳🇱 · KvK 75284251 · RSIN 860222627 · <a href="/contact#general-enquiries" class="text-warm-200 hover:text-warm-50 transition-colors duration-300">Contact us</a>
+    </p>
+  </div>
+</footer>

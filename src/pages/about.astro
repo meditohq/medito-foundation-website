@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Section from '../components/Section.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import StatsStrip from '../components/StatsStrip.astro';
+---
+
+<Layout title="About — Medito Foundation">
+  <Header currentPath="/about" transparent />
+
+  <main>
+    <!-- Hero -->
+    <section class="relative min-h-[55vh] flex items-end overflow-hidden">
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://cdn.medito.app/png/packs/empowerment.png')"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/30"></div>
+      <div class="relative z-10 w-full px-6 pb-14 pt-40 text-center">
+        <div class="max-w-[768px] mx-auto text-warm-50">
+          <p class="text-[13px] text-warm-50/60 uppercase tracking-[0.1em] mb-6">About Medito Foundation</p>
+          <h1 class="font-serif text-[clamp(2.25rem,7vw,3.25rem)] leading-[1.1] tracking-tight">
+            We believe mental wellbeing is a <em class="italic">right,</em><br /> not a privilege.
+          </h1>
+          <p class="mt-6 text-[16px] text-warm-200 leading-[1.7] max-w-lg mx-auto">
+            Medito Foundation is a registered non-profit making meditation and mindfulness tools available to everyone, for free. No exceptions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <StatsStrip stats={[
+      { value: '4.1M+', label: 'people reached' },
+      { value: '2020', label: 'founded' },
+      { value: '190+', label: 'countries' },
+      { value: '$0', label: 'cost to users' },
+    ]} />
+
+    <!-- Story -->
+    <Section>
+      <SectionLabel text="Our story" />
+      <div class="space-y-4 text-[15px] text-ink-light leading-[1.7]">
+        <p>
+          Meditation and mindfulness have been shown to help with depression, stress, anxiety, and other negative states of mind. Yet most tools that teach these practices are locked behind expensive subscriptions.
+        </p>
+        <p>
+          We started Medito Foundation because we believe no one should have to pay to learn how to take care of their mind. Since 2020, we've built a free app used by over 4.1 million people in more than 190 countries — entirely through volunteer work and community donations.
+        </p>
+      </div>
+    </Section>
+
+    <!-- Commitments — the trust section -->
+    <Section class="bg-warm-100">
+      <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-8 text-center">Our commitments to you</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="border border-warm-200 bg-warm-50 p-6 text-center">
+          <h3 class="font-serif text-[20px] mb-2">Free, forever</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">Every meditation, course, and feature is free. No trials, no premium tier, no "unlock for $9.99." Ever.</p>
+        </div>
+        <div class="border border-warm-200 bg-warm-50 p-6 text-center">
+          <h3 class="font-serif text-[20px] mb-2">Made for everyone</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">Accessible regardless of age, income, background, or situation. No account or sign-up required.</p>
+        </div>
+        <div class="border border-warm-200 bg-warm-50 p-6 text-center">
+          <h3 class="font-serif text-[20px] mb-2">Transparent</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">Open source code, published finances, public roadmap. We have nothing to hide.</p>
+        </div>
+        <div class="border border-warm-200 bg-warm-50 p-6 text-center">
+          <h3 class="font-serif text-[20px] mb-2">Community built</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">Built by volunteers and contributors from around the world who care about making mindfulness accessible.</p>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Objectives -->
+    <Section>
+      <SectionLabel text="What we do" />
+      <div class="space-y-10">
+        <div>
+          <h3 class="font-serif text-[22px] mb-3">Research & develop</h3>
+          <p class="text-[15px] text-ink-light leading-[1.7]">
+            We research and develop freely available tools for accessible mindfulness and meditation, informed by science and shaped by community feedback.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-serif text-[22px] mb-3">Promote wellbeing</h3>
+          <p class="text-[15px] text-ink-light leading-[1.7]">
+            We promote mindfulness, meditation and wellbeing to people across the world, regardless of their ability to pay.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-serif text-[22px] mb-3">Encourage mindful living</h3>
+          <p class="text-[15px] text-ink-light leading-[1.7]">
+            We encourage people to live more mindfully and compassionately in their daily lives through practical, evidence-informed tools.
+          </p>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Diversity & Inclusion -->
+    <Section class="bg-ink text-warm-50">
+      <SectionLabel text="Diversity & inclusion" />
+      <SectionHeading class="mb-6">
+        We are committed to making our resources accessible to everyone.
+      </SectionHeading>
+      <div class="space-y-4 text-[15px] text-warm-200 leading-[1.7]">
+        <p>
+          By diversity we mean gender, race, age, sexual orientation, nationality, religion, ability, culture, personality type, skill set, thinking style, and life experience.
+        </p>
+        <p>
+          By inclusion we mean a practical commitment to apply this understanding with the shared goal of making the world more mindful.
+        </p>
+      </div>
+    </Section>
+
+    <!-- Finances -->
+    <Section>
+      <SectionLabel text="Our finances" />
+      <SectionHeading class="mb-6">
+        Every penny goes towards the mission.
+      </SectionHeading>
+      <div class="space-y-4 text-[15px] text-ink-light leading-[1.7]">
+        <p>
+          Our income is primarily derived from donations from our community. We also receive grants, corporate partnerships, and meditation retreat income.
+        </p>
+        <p>
+          We are transparent about our finances and are continuously investigating sustainable long-term funding streams to ensure we can keep our tools free forever.
+        </p>
+      </div>
+    </Section>
+
+    <!-- People -->
+    <Section class="bg-warm-100">
+      <SectionLabel text="People" />
+      <SectionHeading>Built by caring people</SectionHeading>
+      <p class="mt-4 text-[15px] text-ink-light leading-[1.7]">
+        Medito was and is currently built and supported by caring human beings. We thank them for their past, present and future contributions.
+      </p>
+      <a
+        href="/people"
+        class="inline-block mt-8 text-[15px] font-medium text-warm-50 bg-ink px-5 py-2.5 hover:bg-ink-light transition-colors duration-300"
+      >
+        See everyone who made this possible
+      </a>
+    </Section>
+
+    <!-- Legal identity -->
+    <Section>
+      <SectionLabel text="Legal" />
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4">
+        <div class="flex justify-between border-b border-warm-200 py-3">
+          <p class="text-[14px] text-ink-light">Legal name</p>
+          <p class="text-[14px] text-ink font-medium">Stichting Medito</p>
+        </div>
+        <div class="flex justify-between border-b border-warm-200 py-3">
+          <p class="text-[14px] text-ink-light">Type</p>
+          <p class="text-[14px] text-ink font-medium">Non-profit foundation</p>
+        </div>
+        <div class="flex justify-between border-b border-warm-200 py-3">
+          <p class="text-[14px] text-ink-light">Registered in</p>
+          <p class="text-[14px] text-ink font-medium">Amsterdam, Netherlands</p>
+        </div>
+        <div class="flex justify-between border-b border-warm-200 py-3">
+          <p class="text-[14px] text-ink-light">KvK number</p>
+          <p class="text-[14px] text-ink font-medium">75284251</p>
+        </div>
+        <div class="flex justify-between border-b border-warm-200 py-3">
+          <p class="text-[14px] text-ink-light">RSIN</p>
+          <p class="text-[14px] text-ink font-medium">860222627</p>
+        </div>
+        <div class="flex justify-between border-b border-warm-200 py-3">
+          <p class="text-[14px] text-ink-light">Founded</p>
+          <p class="text-[14px] text-ink font-medium">2020</p>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Donate CTA -->
+    <section class="py-20 px-6 bg-cta">
+      <div class="max-w-[768px] mx-auto text-center">
+        <SectionHeading class="mx-auto text-white">
+          Help us keep mindfulness free
+        </SectionHeading>
+        <p class="mt-4 text-[15px] text-white/80 leading-[1.7] max-w-md mx-auto">
+          Less than 1% of our users have ever donated. If you believe mental wellbeing should be accessible to everyone, consider supporting the foundation.
+        </p>
+        <a
+          href="https://donate.meditofoundation.org/"
+          target="_blank"
+          rel="noopener"
+          class="inline-block mt-8 text-[15px] font-medium text-cta bg-white px-8 py-3.5 hover:bg-white/90 transition-colors duration-300"
+        >
+          Make a donation
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

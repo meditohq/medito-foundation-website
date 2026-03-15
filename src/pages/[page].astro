@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Section from '../components/Section.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import StoreBadges from '../components/StoreBadges.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  return pages.map(page => ({
+    params: { page: page.data.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+---
+
+<Layout title={page.data.metaTitle} description={page.data.metaDescription}>
+  <Header />
+
+  <main>
+    <!-- Hero + Content -->
+    <section class="pt-32 pb-20 px-6">
+      <div class="max-w-[768px] mx-auto">
+        <h1 class="font-serif text-[clamp(2.25rem,7vw,3.25rem)] leading-[1.1] tracking-tight text-center" set:html={page.data.heading} />
+        {page.data.subtitle && (
+          <p class="mt-6 text-[16px] text-ink-light leading-[1.7] max-w-lg mx-auto text-center">
+            {page.data.subtitle}
+          </p>
+        )}
+      </div>
+    </section>
+
+    <section class="pb-20 px-6">
+      <div class="max-w-[768px] mx-auto">
+        <div class="prose">
+          <Content />
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 px-6 bg-cta">
+      <div class="max-w-[768px] mx-auto text-center">
+        <SectionHeading class="mx-auto text-white">
+          Start meditating today
+        </SectionHeading>
+        <p class="mt-4 text-[15px] text-white/80 leading-[1.7] max-w-md mx-auto">
+          Download the free Medito app.<br />No account, no subscription, no catch.
+        </p>
+        <StoreBadges variant="dark" gaPrefix="page_bottom" class="mt-8" />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+</Layout>

@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Section from '../components/Section.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import StatsStrip from '../components/StatsStrip.astro';
+---
+
+<Layout title="Research — Medito Foundation">
+  <Header currentPath="/research" />
+
+  <main>
+    <!-- Hero -->
+    <section class="pt-32 pb-20 px-6 text-center">
+      <div class="max-w-[768px] mx-auto">
+        <SectionLabel text="Research" />
+        <h1 class="font-serif text-[clamp(2.25rem,7vw,3.25rem)] leading-[1.1] tracking-tight">
+          Advancing the <em class="italic">science</em> of mindfulness
+        </h1>
+        <p class="mt-6 text-[16px] text-ink-light leading-[1.7] max-w-lg mx-auto">
+          We partner with universities, labs, and non-profits to conduct rigorous research on mindfulness and meditation. Our global community of meditators makes large-scale studies possible.
+        </p>
+      </div>
+    </section>
+
+    <StatsStrip stats={[
+      { value: '8+', label: 'studies' },
+      { value: '3,000+', label: 'participants' },
+    ]} />
+
+    <!-- For researchers -->
+    <Section>
+      <SectionLabel text="For researchers" />
+      <SectionHeading class="mb-6">
+        Run your study with real meditators, worldwide.
+      </SectionHeading>
+      <div class="space-y-4 text-[15px] text-ink-light leading-[1.7]">
+        <p>
+          Whether you're at a university, non-profit, or independent lab, if your project is rooted in science, we want to hear from you. We work with researchers of all scales, from small exploratory studies to large-scale RCTs.
+        </p>
+        <p>
+          We can help recruit participants from our pool of meditators, from complete beginners to experienced practitioners, across 190+ countries. Our community is diverse, engaged, and willing to contribute to research that advances the field.
+        </p>
+      </div>
+    </Section>
+
+    <!-- How it works -->
+    <Section class="bg-warm-100">
+      <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-8 text-center">How we work with researchers</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="border border-warm-200 bg-warm-50 p-6 text-center">
+          <h3 class="font-serif text-[20px] mb-3">Participant recruitment</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">Access our global pool of meditators. Typically $1 per participant for larger studies.</p>
+        </div>
+        <div class="border border-warm-200 bg-warm-50 p-6 text-center">
+          <h3 class="font-serif text-[20px] mb-3">Custom development</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">Need bespoke features, content, or integration? We scope a budget based on your requirements.</p>
+        </div>
+        <div class="border border-warm-200 bg-warm-50 p-6 text-center">
+          <h3 class="font-serif text-[20px] mb-3">Pro bono</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">Smaller projects or early-stage research? We regularly collaborate on a free basis.</p>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Published research -->
+    <Section>
+      <SectionLabel text="Published research" />
+      <div class="space-y-0">
+        <div class="border-b border-warm-200 py-6">
+          <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-4">2024 · University of Bath · British Journal of Health Psychology</p>
+          <h3 class="font-serif text-[22px] mb-3">Mindfulness improves psychological health and supports health behaviour cognitions</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">
+            A large-scale RCT recruiting 1,247 adults from 91 countries. Participants used Medito's 30-Day Challenge for daily 10-minute mindfulness sessions. The trial found substantial improvements in psychological wellbeing, depression, anxiety, and sleep quality, with effects maintained at 2-month follow-up.
+          </p>
+          <p class="mt-2 text-[13px] text-ink-faint">Remskar, Western, Ainsworth · Funded by ESRC (grant #2381338)</p>
+          <a href="https://bpspsychub.onlinelibrary.wiley.com/doi/10.1111/bjhp.12745" target="_blank" rel="noopener" class="inline-block mt-2 text-[13px] text-cta hover:text-cta-hover transition-colors duration-300">Read the paper ↗</a>
+        </div>
+
+        <div class="border-b border-warm-200 py-6">
+          <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-4">2025 · University of Bath · Mental Health and Physical Activity</p>
+          <h3 class="font-serif text-[22px] mb-3">Getting Active through Mindfulness: digital mindfulness-based intervention promoting physical activity</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">
+            109 adults in England followed a 30-day programme combining step tracking with daily mindfulness via Medito. While short-term physical activity didn't increase, participants reported significantly stronger intentions to keep exercising — suggesting a foundation for longer-term behaviour change.
+          </p>
+          <p class="mt-2 text-[13px] text-ink-faint">Dr. Masha Remskar</p>
+          <a href="https://researchportal.bath.ac.uk/en/publications/getting-active-through-mindfulness-randomised-controlled-trial-of/" target="_blank" rel="noopener" class="inline-block mt-2 text-[13px] text-cta hover:text-cta-hover transition-colors duration-300">Read the paper ↗</a>
+        </div>
+
+        <div class="border-b border-warm-200 py-6">
+          <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-4">2023 · University of Bath · Mental Health and Physical Activity</p>
+          <h3 class="font-serif text-[22px] mb-3">Effects of combining physical activity with mindfulness on mental health: a systematic review</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">
+            This review found mindfulness to be highly effective at reducing worry, stress, and anxiety while helping people live healthier lives. Based on these findings, Medito and the University of Bath created mindfulness audio courses designed to help people build an exercise habit.
+          </p>
+          <p class="mt-2 text-[13px] text-ink-faint">Remskar et al.</p>
+          <a href="https://researchportal.bath.ac.uk/en/publications/effects-of-combining-physical-activity-with-mindfulness-on-mental" target="_blank" rel="noopener" class="inline-block mt-2 text-[13px] text-cta hover:text-cta-hover transition-colors duration-300">Read the paper ↗</a>
+        </div>
+
+        <div class="py-6">
+          <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-4">2021 · SEGi University, Malaysia · PubMed Central</p>
+          <h3 class="font-serif text-[22px] mb-3">Use of a mindfulness application to promote students' mental well-being during COVID-19</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">
+            218 dental students used the Medito app with weekly meditation sessions incorporated into their timetable. The study found a positive correlation between mindfulness and resilience, and that app-based meditation may temporarily benefit students' mental wellbeing.
+          </p>
+          <p class="mt-2 text-[13px] text-ink-faint">Rath, Wong, Wong, Brockman</p>
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8250785/" target="_blank" rel="noopener" class="inline-block mt-2 text-[13px] text-cta hover:text-cta-hover transition-colors duration-300">Read the paper ↗</a>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Ongoing -->
+    <Section class="bg-warm-100">
+      <SectionLabel text="Current & upcoming projects" />
+      <div class="space-y-0">
+        <div class="border-b border-warm-200 py-4">
+          <div class="flex items-baseline justify-between gap-4">
+            <p class="text-[15px] font-medium text-ink">City St George's, University of London / University of Southampton</p>
+            <span class="text-[12px] text-ink-faint border border-warm-200 px-2 py-0.5 shrink-0">Pending</span>
+          </div>
+          <p class="mt-1 text-[14px] text-ink-light">Using digital mindfulness to support people with Multiple Sclerosis and improve quality of life</p>
+          <p class="mt-1 text-[13px] text-ink-faint">Dr Angeliki Bogosian · Department of Psychology & Neuroscience, City St George's, University of London</p>
+        </div>
+        <div class="border-b border-warm-200 py-4">
+          <div class="flex items-baseline justify-between gap-4">
+            <p class="text-[15px] font-medium text-ink">University of Melbourne / Emory University</p>
+            <span class="text-[12px] text-ink-faint border border-warm-200 px-2 py-0.5 shrink-0">Ongoing</span>
+          </div>
+          <p class="mt-1 text-[14px] text-ink-light">Tracking Meditation Study — examining factors like readiness to change, stress levels, and personality traits to predict app engagement</p>
+          <p class="mt-1 text-[13px] text-ink-faint">Contemplative Studies Centre, University of Melbourne, in partnership with Emory University</p>
+        </div>
+        <div class="border-b border-warm-200 py-4">
+          <div class="flex items-baseline justify-between gap-4">
+            <p class="text-[15px] font-medium text-ink">University of Melbourne</p>
+            <span class="text-[12px] text-ink-faint border border-warm-200 px-2 py-0.5 shrink-0">Pending publication</span>
+          </div>
+          <p class="mt-1 text-[14px] text-ink-light">Predictors of Engagement with a Popular Meditation App: A Prospective Study of Real-World Use</p>
+          <p class="mt-1 text-[13px] text-ink-faint">Adams, Davies, Wattanatakulchat, Galante, D'Alfonso, Van Dam · JMIR (submitted)</p>
+        </div>
+        <div class="py-4">
+          <div class="flex items-baseline justify-between gap-4">
+            <p class="text-[15px] font-medium text-ink">University of Pennsylvania</p>
+            <span class="text-[12px] text-ink-faint border border-warm-200 px-2 py-0.5 shrink-0">Early stages</span>
+          </div>
+          <p class="mt-1 text-[14px] text-ink-light">Investigating the efficacy of mindfulness in reducing anti-democratic support among intuitive thinkers</p>
+          <p class="mt-1 text-[13px] text-ink-faint">Andrew I. Thompson · Department of Political Science, University of Pennsylvania</p>
+        </div>
+      </div>
+    </Section>
+
+    <!-- CTA -->
+    <section class="py-20 px-6 bg-cta">
+      <div class="max-w-[768px] mx-auto text-center">
+        <SectionHeading class="mx-auto text-white">
+          Have a research project?
+        </SectionHeading>
+        <p class="mt-4 text-[15px] text-white/80 leading-[1.7] max-w-md mx-auto">
+          We're always looking for new collaborations with researchers, universities, and institutions. If your project is rooted in science, let's talk.
+        </p>
+        <a
+          href="/contact#general-enquiries"
+          class="inline-block mt-8 text-[15px] font-medium text-cta bg-white px-8 py-3.5 hover:bg-white/90 transition-colors duration-300"
+        >
+          Get in touch
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

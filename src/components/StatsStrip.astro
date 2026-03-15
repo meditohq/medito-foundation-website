@@ -1,0 +1,45 @@
+---
+interface Stat {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  stats: Stat[];
+  variant?: 'dark' | 'light';
+}
+
+const { stats, variant = 'dark' } = Astro.props;
+const isDark = variant === 'dark';
+const count = stats.length;
+const smCols = count <= 2 ? 2 : count <= 3 ? 3 : 4;
+---
+
+<section class={`py-12 px-6 ${isDark ? 'bg-ink text-warm-50' : 'bg-warm-100 text-ink'}`}>
+  <div class="max-w-[768px] mx-auto">
+    <!-- Mobile: 2 cols, last odd item centered -->
+    <div class="sm:hidden">
+      <div class="grid grid-cols-2 gap-y-8 text-center">
+        {stats.map((stat, i) => {
+          const isLast = i === count - 1;
+          const isOdd = count % 2 !== 0 && isLast;
+          return (
+            <div class={`${isOdd ? 'col-span-2' : ''} ${i % 2 !== 0 && !isOdd ? `border-l ${isDark ? 'border-warm-50/10' : 'border-warm-200'}` : ''}`}>
+              <p class="font-serif text-[clamp(1.5rem,5vw,2.25rem)] tracking-tight leading-none">{stat.value}</p>
+              <p class={`mt-2 text-[13px] ${isDark ? 'text-warm-200/60' : 'text-ink-faint'}`}>{stat.label}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+    <!-- Desktop: all in one row -->
+    <div class="hidden sm:flex justify-center text-center">
+      {stats.map((stat, i) => (
+        <div class={`flex-1 ${i >= 1 ? `border-l ${isDark ? 'border-warm-50/10' : 'border-warm-200'}` : ''}`}>
+          <p class="font-serif text-[clamp(1.5rem,5vw,2.25rem)] tracking-tight leading-none">{stat.value}</p>
+          <p class={`mt-2 text-[13px] ${isDark ? 'text-warm-200/60' : 'text-ink-faint'}`}>{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

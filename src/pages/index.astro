@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Section from '../components/Section.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import StatsStrip from '../components/StatsStrip.astro';
+---
+
+<Layout title="Medito Foundation — Building a more mindful and compassionate world">
+  <Header transparent />
+
+  <main>
+    <!-- Hero -->
+    <section class="relative min-h-[60vh] flex items-end overflow-hidden">
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://cdn.medito.app/png/websites/foundation/cover.png')"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/30"></div>
+      <div class="relative z-10 w-full px-6 pb-14 pt-40 text-center">
+        <div class="max-w-[768px] mx-auto text-warm-50">
+          <h1 class="font-serif text-[clamp(2.5rem,8vw,3.75rem)] leading-[1.05] tracking-tight">
+            Building a more <em class="italic">mindful</em><br />and <em class="italic">compassionate</em> world
+          </h1>
+          <p class="mt-8 text-[16px] text-warm-200 leading-[1.7] max-w-lg mx-auto">
+            Medito Foundation is a non-profit making meditation and mindfulness tools accessible to everyone, for free.<br />No paywalls, no ads, no exceptions.
+          </p>
+          <div class="mt-10 flex items-center justify-center gap-6">
+            <a
+              href="/medito-app"
+              data-ga="hero_cta_get_the_app"
+              class="text-[15px] font-medium text-white bg-cta px-6 py-3 hover:bg-cta-hover transition-colors duration-300"
+            >
+              Get the app
+            </a>
+            <a
+              href="https://donate.meditofoundation.org/"
+              target="_blank"
+              rel="noopener"
+              data-ga="hero_cta_donate"
+              class="text-[15px] font-medium text-ink bg-white px-6 py-3 hover:bg-white/90 transition-colors duration-300"
+            >
+              Donate
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <StatsStrip stats={[
+      { value: '4.1M+', label: 'people reached' },
+      { value: '190+', label: 'countries' },
+      { value: '$0', label: 'cost to users' },
+      { value: '2020', label: 'founded' },
+    ]} />
+
+    <!-- What we do — 3 pillars -->
+    <Section>
+      <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-8 text-center">What we do</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <a href="/medito-app" data-ga="pillar_cta_explore_app" class="border border-warm-200 p-6 text-center group hover:border-cta transition-colors duration-300">
+          <h3 class="font-serif text-[20px] mb-3 group-hover:text-cta transition-colors duration-300">The Medito App</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">
+            Free guided meditations, sleep stories, courses, and breathing exercises. Used by 4.1 million people worldwide.
+          </p>
+          <p class="mt-4 text-[13px] font-medium text-cta">Explore the app →</p>
+        </a>
+        <a href="/research" data-ga="pillar_cta_research" class="border border-warm-200 p-6 text-center group hover:border-cta transition-colors duration-300">
+          <h3 class="font-serif text-[20px] mb-3 group-hover:text-cta transition-colors duration-300">Research</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">
+            We partner with universities to advance the science of mindfulness. 8+ studies, 3,000+ participants.
+          </p>
+          <p class="mt-4 text-[13px] font-medium text-cta">Our research →</p>
+        </a>
+        <a href="/about" data-ga="pillar_cta_about" class="border border-warm-200 p-6 text-center group hover:border-cta transition-colors duration-300">
+          <h3 class="font-serif text-[20px] mb-3 group-hover:text-cta transition-colors duration-300">The Foundation</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">
+            A registered non-profit in the Netherlands. Transparent, community-built, and accountable.
+          </p>
+          <p class="mt-4 text-[13px] font-medium text-cta">About us →</p>
+        </a>
+      </div>
+    </Section>
+
+    <!-- Mission -->
+    <Section class="bg-warm-100">
+      <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-8 text-center">Why we exist</p>
+      <div class="text-center max-w-lg mx-auto">
+        <SectionHeading class="mx-auto">
+          Meditation can change lives.<br />It shouldn't cost anything.
+        </SectionHeading>
+        <p class="mt-6 text-[15px] text-ink-light leading-[1.7]">
+          Most mindfulness apps charge monthly subscriptions. We believe that learning to take care of your mind shouldn't depend on your ability to pay. That's why everything we build is free, open source, and available to anyone.
+        </p>
+      </div>
+    </Section>
+
+    <!-- Trust signals -->
+    <Section>
+      <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-8 text-center">What makes us different</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-center">
+        <div>
+          <h3 class="font-serif text-[20px] mb-2">Free forever</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">No trials, no premium tier. Every meditation, course, and feature is free.</p>
+        </div>
+        <div>
+          <h3 class="font-serif text-[20px] mb-2">Open source</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">The code is public. No dark patterns. App available under AGPL license.</p>
+        </div>
+        <div>
+          <h3 class="font-serif text-[20px] mb-2">Evidence informed</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">Content developed with mindfulness researchers and experienced teachers.</p>
+        </div>
+        <div>
+          <h3 class="font-serif text-[20px] mb-2">Community built</h3>
+          <p class="text-[14px] text-ink-light leading-[1.6]">Built by 200+ volunteers, professionals and passionates from around the world.</p>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Donate -->
+    <section class="py-20 px-6 bg-cta">
+      <div class="max-w-[768px] mx-auto text-center">
+        <SectionHeading class="mx-auto text-white">
+          Help us reach more people
+        </SectionHeading>
+        <p class="mt-4 text-[15px] text-white/80 leading-[1.7] max-w-md mx-auto">
+          Less than 1% of our users have ever donated. If you believe mindfulness should be accessible to everyone, consider supporting the foundation.
+        </p>
+        <a
+          href="https://donate.meditofoundation.org/"
+          target="_blank"
+          rel="noopener"
+          data-ga="donate_cta_make_donation"
+          class="inline-block mt-8 text-[15px] font-medium text-cta bg-white px-8 py-3.5 hover:bg-white/90 transition-colors duration-300"
+        >
+          Make a donation
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

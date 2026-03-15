@@ -1,0 +1,130 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Section from '../../components/Section.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import StatsStrip from '../../components/StatsStrip.astro';
+import StoreBadges from '../../components/StoreBadges.astro';
+---
+
+<Layout title="Medito App — Free Meditation App — Medito Foundation">
+  <Header currentPath="/medito-app" />
+
+  <main>
+    <!-- Hero -->
+    <section class="pt-32 pb-20 px-6 text-center">
+      <div class="max-w-[768px] mx-auto">
+        <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-6">The Medito App</p>
+        <h1 class="font-serif text-[clamp(2.5rem,8vw,3.75rem)] leading-[1.05] tracking-tight">
+          Free-forever meditation.<br /><em class="italic">Made for people,</em> not profit.
+        </h1>
+        <p class="mt-6 text-[16px] text-ink-light leading-[1.7] max-w-md mx-auto">
+          Hundreds of guided meditations, sleep stories, courses, and breathing exercises. No ads, no paywalls, no account needed.
+        </p>
+        <StoreBadges variant="light" gaPrefix="app_hero" class="mt-8" />
+      </div>
+    </section>
+
+    <!-- What's inside -->
+    <Section class="bg-warm-100">
+      <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-8 text-center">What's inside</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-center">
+        <div>
+          <p class="font-serif text-[22px] mb-2">Courses</p>
+          <p class="text-[14px] text-ink-light leading-[1.6]">Beginner to advanced, including short and 30-day challenges</p>
+        </div>
+        <div>
+          <p class="font-serif text-[22px] mb-2">Sleep</p>
+          <p class="text-[14px] text-ink-light leading-[1.6]">Stories, sounds, and meditations to help you drift off</p>
+        </div>
+        <div>
+          <p class="font-serif text-[22px] mb-2">Daily</p>
+          <p class="text-[14px] text-ink-light leading-[1.6]">Fresh guided sessions every day</p>
+        </div>
+        <div>
+          <p class="font-serif text-[22px] mb-2">Breathing</p>
+          <p class="text-[14px] text-ink-light leading-[1.6]">Exercises to calm your nervous system in minutes</p>
+        </div>
+        <div>
+          <p class="font-serif text-[22px] mb-2">Stress & Anxiety</p>
+          <p class="text-[14px] text-ink-light leading-[1.6]">Sessions designed to help when you need it most</p>
+        </div>
+        <div>
+          <p class="font-serif text-[22px] mb-2">Timer</p>
+          <p class="text-[14px] text-ink-light leading-[1.6]">Unguided meditation with ambient sounds</p>
+        </div>
+      </div>
+    </Section>
+
+    <StatsStrip stats={[
+      { value: '4.1M+', label: 'downloads' },
+      { value: '4.9★', label: 'app store rating' },
+      { value: '190+', label: 'countries' },
+    ]} />
+
+    <!-- Reviews -->
+    <Section>
+      <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-8 text-center">What people say</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="border border-warm-200 p-6">
+          <p class="text-[15px] text-ink-light leading-[1.7] italic">"If I could give this app 100 stars I would. From many months I am facing difficulty in focusing and feeling low but Medito helped me a lot."</p>
+          <p class="mt-4 text-[13px] text-ink-faint">— Yashoda</p>
+        </div>
+        <div class="border border-warm-200 p-6">
+          <p class="text-[15px] text-ink-light leading-[1.7] italic">"This is a true gem. I've been using it for meditation for the last 3 weeks and it's simply brilliant. There's plenty of content and it's free."</p>
+          <p class="mt-4 text-[13px] text-ink-faint">— Marcin</p>
+        </div>
+        <div class="border border-warm-200 p-6">
+          <p class="text-[15px] text-ink-light leading-[1.7] italic">"I've tried many meditation apps, specially those that claim to be free. This one is by far the best! 100% free, you can choose the voice you want, they have a beginner's class."</p>
+          <p class="mt-4 text-[13px] text-ink-faint">— Liv</p>
+        </div>
+        <div class="border border-warm-200 p-6">
+          <p class="text-[15px] text-ink-light leading-[1.7] italic">"Yesterday I started meditating with your app, because it was so difficult for me to control my anxiety and stress. Your app helps me forget it all and be with myself."</p>
+          <p class="mt-4 text-[13px] text-ink-faint">— via Instagram</p>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Why different -->
+    <Section class="bg-warm-100">
+      <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-8 text-center">Why Medito is different</p>
+      <div class="space-y-10 text-center max-w-md mx-auto">
+        <div>
+          <h3 class="font-serif text-[22px] mb-2">100% free. Really.</h3>
+          <p class="text-[15px] text-ink-light leading-[1.7]">No trial period, no premium tier, no "unlock for $9.99."<br />Every single meditation is free, forever.</p>
+        </div>
+        <div>
+          <h3 class="font-serif text-[22px] mb-2">No account required</h3>
+          <p class="text-[15px] text-ink-light leading-[1.7]">Download and meditate in under 30 seconds.<br />No email, no sign-up, no friction.</p>
+        </div>
+        <div>
+          <h3 class="font-serif text-[22px] mb-2">Built by a non-profit</h3>
+          <p class="text-[15px] text-ink-light leading-[1.7]">We're a registered charity. No shareholders, no growth targets.<br />Just a mission to make mindfulness accessible.</p>
+        </div>
+        <div>
+          <h3 class="font-serif text-[22px] mb-2">Open source</h3>
+          <p class="text-[15px] text-ink-light leading-[1.7]">Our code is public. You can see exactly how the app works.<br />No dark patterns, no hidden tracking.</p>
+          <a href="https://github.com/meditohq" target="_blank" rel="noopener" class="inline-block mt-2 text-[14px] text-ink hover:text-ink-light transition-colors duration-300">View on GitHub ↗</a>
+        </div>
+      </div>
+    </Section>
+
+    <!-- CTA -->
+    <section id="get" class="py-20 px-6 bg-cta scroll-mt-14">
+      <div class="max-w-[768px] mx-auto text-center">
+        <SectionHeading class="mx-auto text-white">
+          Start meditating today
+        </SectionHeading>
+        <p class="mt-4 text-[15px] text-white/80 leading-[1.7] max-w-md mx-auto">
+          Join 4.1 million people who have already chosen Medito.<br />No account, no payment, no catch.
+        </p>
+        <StoreBadges variant="dark" gaPrefix="app_bottom" class="mt-8" />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+</Layout>

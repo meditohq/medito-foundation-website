@@ -1,0 +1,87 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
+import { getCollection } from 'astro:content';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = (await getCollection('blog'))
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  return paginate(posts, { pageSize: 12 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<Layout title={`Medito Blog Archive${page.currentPage > 1 ? ` — Page ${page.currentPage}` : ''} — Medito Foundation`}>
+  <Header currentPath="/blog" />
+
+  <main>
+    <section class="pt-32 pb-10 px-6">
+      <div class="max-w-[768px] mx-auto">
+        <SectionLabel text="Blog" />
+        <h1 class="font-serif text-[clamp(2.25rem,7vw,3.25rem)] leading-[1.1] tracking-tight">
+          Blog archive
+        </h1>
+        <div class="mt-6 bg-warm-100 text-[14px] text-ink-light leading-[1.6] px-5 py-4">
+          You're browsing the Medito blog archive. The blog is no longer active, but we've kept all articles for you to explore.
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-20 px-6">
+      <div class="max-w-[768px] mx-auto">
+        <div class="space-y-0">
+          {page.data.map(post => (
+            <a href={`/blog/${post.data.slug}`} class="flex gap-6 items-start border-b border-warm-200 py-6 group">
+              {post.data.cover && (
+                <img
+                  src={post.data.cover}
+                  alt=""
+                  class="w-24 h-24 object-cover shrink-0 hidden sm:block"
+                  style="border-radius: 42% 58% 35% 65% / 50% 38% 62% 50%;"
+                  loading="lazy"
+                />
+              )}
+              <div class="min-w-0">
+                <p class="text-[13px] text-ink-faint mb-1">
+                  {post.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+                </p>
+                <h2 class="font-serif text-[22px] leading-snug text-ink group-hover:text-ink-light transition-colors duration-300">
+                  {post.data.title}
+                </h2>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <!-- Pagination -->
+        {page.lastPage > 1 && (
+          <div class="mt-12 flex items-center justify-between">
+            {page.url.prev ? (
+              <a href={page.url.prev} class="text-[15px] font-medium text-ink border-b border-ink pb-0.5 hover:text-ink-light hover:border-ink-light transition-colors duration-300">
+                &larr; Newer
+              </a>
+            ) : (
+              <span />
+            )}
+            <p class="text-[13px] text-ink-faint">
+              Page {page.currentPage} of {page.lastPage}
+            </p>
+            {page.url.next ? (
+              <a href={page.url.next} class="text-[15px] font-medium text-ink border-b border-ink pb-0.5 hover:text-ink-light hover:border-ink-light transition-colors duration-300">
+                Older &rarr;
+              </a>
+            ) : (
+              <span />
+            )}
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

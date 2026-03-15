@@ -1,0 +1,22 @@
+---
+interface Props {
+  image: string;
+  label?: string;
+  title: string;
+  subtitle?: string;
+}
+
+const { image, label, title, subtitle } = Astro.props;
+---
+
+<section class="relative min-h-[50vh] flex items-end overflow-hidden">
+  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style={`background-image: url('${image}')`}></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/50 to-ink/20"></div>
+  <div class="relative z-10 w-full px-6 pb-14 pt-40">
+    <div class="max-w-[768px] mx-auto text-warm-50">
+      {label && <p class="text-[13px] text-warm-50/60 uppercase tracking-[0.1em] mb-6">{label}</p>}
+      <h1 class="font-serif text-[clamp(2.25rem,7vw,3.25rem)] leading-[1.1] tracking-tight" set:html={title} />
+      {subtitle && <p class="mt-6 text-[16px] text-warm-200 leading-[1.7]">{subtitle}</p>}
+    </div>
+  </div>
+</section>

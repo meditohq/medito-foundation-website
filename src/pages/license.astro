@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="License — Medito Foundation">
+  <Header />
+
+  <main>
+    <section class="pt-32 pb-20 px-6">
+      <div class="max-w-[768px] mx-auto">
+        <p class="text-[13px] text-ink-faint uppercase tracking-[0.1em] mb-6">Legal</p>
+        <h1 class="font-serif text-[clamp(2.25rem,7vw,3.25rem)] leading-[1.1] tracking-tight mb-12">
+          License
+        </h1>
+
+        <div class="prose">
+          <h2>Medito App</h2>
+          <p>The Medito app itself is licensed under the <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU Affero General Public License (AGPL)</a>. This means:</p>
+          <ul>
+            <li>The app's source code is freely available to the public.</li>
+            <li>Users can modify and distribute the app under the terms of the AGPL.</li>
+            <li>Any modifications must also be released under the AGPL.</li>
+            <li>The app must make its source code available to users who interact with it over a network.</li>
+          </ul>
+          <p>You can find the app's source code here: <a href="https://github.com/meditohq/medito-app">github.com/meditohq/medito-app</a></p>
+
+          <h2>Medito Original Content</h2>
+          <p>Original Medito content is crafted collaboratively by volunteers, mindfulness experts, and passionate contributors. Every piece goes through a dedicated creation and review process to ensure quality, accuracy, and accessibility.</p>
+          <p>This content is not open source. Keeping original content under a proprietary license allows Medito Foundation to sustain its operations through custom licensing arrangements. Unfortunately, we have experienced unauthorised use of our content in the past, which directly undermines our ability to fund free tools for everyone.</p>
+
+          <h2>Friends of Medito Content</h2>
+          <p>Some content available in Medito products is provided by external creators and partners, known as <a href="/people">Friends of Medito</a>. This content remains the copyright of its respective original creators and is included in Medito under individual agreements.</p>
+          <p>Friends of Medito content cannot be reproduced, distributed, or used outside of Medito without the express written permission of the original creator.</p>
+
+          <h2>Custom Licensing</h2>
+          <p>The content available within the Medito app is subject to a custom license. This licensing model is designed to allow Medito Foundation to generate revenue to sustain its operations while still maintaining its commitment to accessibility.</p>
+          <p>For use of Medito content outside of the Medito app, we offer custom licensing options. These licenses are available for various durations and amounts of content, typically for one-year terms. Options range from licensing a single audio track to multiple tracks.</p>
+          <p>To inquire about licensing Medito content for external use or for more information, <a href="/contact#general-enquiries">contact us</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
